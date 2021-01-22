@@ -1,0 +1,38 @@
+{
+    "name": "jaycct/advantageacl",
+    "description": "Admin role and permission management",
+    "type": "project",
+    "license": "MIT",
+    "version": "v1.0.0",
+    "authors": [
+        {
+            "name": "Jaysukh Sasukiya",
+            "email": "jaysukh.s@communicationcrafts.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "files": [
+            "jaycct/advantageacl/Helpers/PermissionHelper.php",
+            "jaycct/advantageacl/Helpers/SortingHelper.php"
+
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "jaycct\\advantageacl\\": "src/"
+        }
+    },
+    "extra":
+    {
+        "laravel":
+        {
+            "providers": ["jaycct\\advantageacl\\AdvantageAclServiceProvider"]
+        }
+    },
+
+    "require": {}
+
+}
