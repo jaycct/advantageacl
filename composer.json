@@ -16,8 +16,8 @@
             "database"
         ],
         "files": [
-            "jaycct/advantageacl/Helpers/PermissionHelper.php",
-            "jaycct/advantageacl/Helpers/SortingHelper.php"
+            "jaycct/advantageacl/src/Helpers/PermissionHelper.php",
+            "jaycct/advantageacl/src/Helpers/SortingHelper.php"
 
         ],
         "psr-4": {
