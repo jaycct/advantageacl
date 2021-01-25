@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "classmap": [
-            "database"
+            "publishable/database"
         ],
         "files": [
             "jaycct/advantageacl/src/Helpers/PermissionHelper.php",
