@@ -66,15 +66,15 @@ class AdvantageAclServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/Http/Requests' => 'app/http/Requests/',
         ], 'requests');
 
-        $this->publishes([__DIR__.'/src/Models' => 'app/Models/',
+        $this->publishes([__DIR__.'/Models' => 'app/Models/',
         ], 'Models');
 
-        $this->publishes([__DIR__.'/src/Repositories' => 'app/Repositories/',
+        $this->publishes([__DIR__.'/Repositories' => 'app/Repositories/',
         ], 'repositories');
 
-        $this->publishes([__DIR__.'/src/Traits' => 'app/Traits/',
+        $this->publishes([__DIR__.'/Traits' => 'app/Traits/',
         ], 'traits');
-        $this->publishes([__DIR__.'/src/Helpers' => 'app/Helpers/',
+        $this->publishes([__DIR__.'/Helpers' => 'app/Helpers/',
         ], 'helpers');
 
 
