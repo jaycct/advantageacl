@@ -31,7 +31,7 @@ class AdvantageAclServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //$this->loadMigrationsFrom(__DIR__.'/./../publishable/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/./../publishable/database/migrations');
         $this->loadViewsFrom(__DIR__.'/./../resources/views','advantageacl');
 
         $this->publishes([
@@ -57,24 +57,24 @@ class AdvantageAclServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/routes/advantageacl.php' => 'routes/advantageacl.php',
         ], 'route');
 
-        $this->publishes([__DIR__.'/http/Controllers' => 'app/http/controllers/',
+        $this->publishes([__DIR__.'/Http/Controllers' => 'app/http/controllers/',
         ], 'controller');
 
-        $this->publishes([__DIR__.'/http/Middleware' => 'app/http/Middleware/',
+        $this->publishes([__DIR__.'/Http/Middleware' => 'app/http/Middleware/',
         ], 'middleware');
 
-        $this->publishes([__DIR__.'/http/Requests' => 'app/http/Requests/',
+        $this->publishes([__DIR__.'/Http/Requests' => 'app/http/Requests/',
         ], 'requests');
 
-        $this->publishes([__DIR__.'/Models' => 'app/Models/',
+        $this->publishes([__DIR__.'/src/Models' => 'app/Models/',
         ], 'Models');
 
-        $this->publishes([__DIR__.'/Repositories' => 'app/Repositories/',
+        $this->publishes([__DIR__.'/src/Repositories' => 'app/Repositories/',
         ], 'repositories');
 
-        $this->publishes([__DIR__.'/Traits' => 'app/Traits/',
+        $this->publishes([__DIR__.'/src/Traits' => 'app/Traits/',
         ], 'traits');
-        $this->publishes([__DIR__.'/Helpers' => 'app/Helpers/',
+        $this->publishes([__DIR__.'/src/Helpers' => 'app/Helpers/',
         ], 'helpers');
 
 
