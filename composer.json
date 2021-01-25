@@ -13,11 +13,11 @@
     "minimum-stability": "dev",
     "autoload": {
         "classmap": [
-            "publishable/database"
+            "publishable\\database"
         ],
         "files": [
-            "jaycct/advantageacl/src/Helpers/PermissionHelper.php",
-            "jaycct/advantageacl/src/Helpers/SortingHelper.php"
+            "jaycct\\advantageacl\\src\\Helpers\\PermissionHelper.php",
+            "jaycct\\advantageacl\\src\\Helpers\\SortingHelper.php"
 
         ],
         "psr-4": {
