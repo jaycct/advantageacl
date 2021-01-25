@@ -16,8 +16,8 @@
             "publishable\\database"
         ],
         "files": [
-            "src\\Helpers\\PermissionHelper.php",
-            "src\\Helpers\\SortingHelper.php"
+            "src/Helpers/PermissionHelper.php",
+            "src/Helpers/SortingHelper.php"
 
         ],
         "psr-4": {
