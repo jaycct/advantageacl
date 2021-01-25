@@ -31,7 +31,7 @@ class AdvantageAclServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/./../publishable/database/migrations');
+        //$this->loadMigrationsFrom(__DIR__.'/./../publishable/database/migrations');
         $this->loadViewsFrom(__DIR__.'/./../resources/views','advantageacl');
 
         $this->publishes([
