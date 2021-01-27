@@ -2,7 +2,7 @@
 
 namespace jaycct\advantageacl\Http\Controllers;
 
-use jaycct\advantageacl\Http\Requests\AdminUserStoreRequest;
+use jaycct\advantageacl\Http\Requests\AdvantageAclStoreRequest;
 use jaycct\advantageacl\Repositories\AclModuleRepository;
 use jaycct\advantageacl\Repositories\AclRolesRepository;
 use Illuminate\Http\Request;
@@ -60,7 +60,7 @@ class AclRolesController extends AclAdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AdminUserStoreRequest $request)
+    public function store(AdvantageAclStoreRequest $request)
     {
 
        try{
@@ -113,7 +113,7 @@ class AclRolesController extends AclAdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AdminUserStoreRequest $request)
+    public function update(AdvantageAclStoreRequest $request)
     {
 
         try{

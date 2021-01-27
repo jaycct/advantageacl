@@ -9,7 +9,7 @@ use jaycct\advantageacl\Repositories\AclMenuRepository;
 use Illuminate\Http\Request;
 use jaycct\advantageacl\Traits\AclUtilityTrait;
 use Mockery\Exception;
-use jaycct\advantageacl\Http\Requests\AdminUserStoreRequest;
+use jaycct\advantageacl\Http\Requests\AdvantageAclStoreRequest;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -72,7 +72,7 @@ class AclModulesController extends AclAdminController
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function store(AdminUserStoreRequest $request)
+    public function store(AdvantageAclStoreRequest $request)
     {
 
         try {
@@ -114,10 +114,10 @@ class AclModulesController extends AclAdminController
     }
     /**
      * Usage: Update acl module and acl modules route
-     * @param AdminUserStoreRequest $request
+     * @param AdvantageAclStoreRequest $request
      * @return mixed
      */
-    public function update(AdminUserStoreRequest $request)
+    public function update(AdvantageAclStoreRequest $request)
     {
         try {
 

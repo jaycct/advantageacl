@@ -6,7 +6,7 @@ use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 
-class AdminUserStoreRequest extends FormRequest
+class AdvantageAclStoreRequest extends FormRequest
 {
 
     protected $rulesArray;
