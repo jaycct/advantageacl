@@ -21,6 +21,16 @@ class AclMenusTableSeeder extends Seeder
                 'icon' => '',
                 'status' => 'Active'
             ]);
+			DB::table('acl_menus')->insert([
+                'menu_name' => 'Modules Management',
+                'icon' => '',
+                'status' => 'Active'
+            ]);
+            DB::table('acl_menus')->insert([
+                'menu_name' => 'Users Management',
+                'icon' => '',
+                'status' => 'Active'
+            ]);
 
             if(Schema::hasTable('acl_modules')) {
                $moduleId =  DB::table('acl_modules')->insertGetId([

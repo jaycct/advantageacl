@@ -33,10 +33,15 @@ class AdvantageAclServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/./../publishable/database/migrations');
         $this->loadViewsFrom(__DIR__.'/./../resources/views','advantageacl');
-
-        $this->publishes([
+        
+		
+		$this->publishes([
             __DIR__.'/./../resources/views' => resource_path('views/advantageacl/'),
-        ]);
+        ],'views');
+		
+		$this->publishes([
+            __DIR__.'/./../resources/lang' => resource_path('lang'),
+        ],'lang');
 
         $this->app['router']->namespace('jaycct\advantageacl\Http\Controllers')
             ->middleware(['web'])
