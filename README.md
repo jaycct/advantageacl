@@ -36,9 +36,24 @@ Then follow bellow steps
  public function aclRole(){
         return $this->belongsTo('jaycct\advantageacl\Models\AclRole','acl_role_id');
  }
+
+That's it!
  
-7. If you wish to use package nav menus then just include bellow blade file in 
+=>  If you wish to use package nav menus then just include bellow blade file in 
     views\advantageacl\layouts\shared\nav-builder.blade.php 
 	
 	This blade file display menus in admin sidebar
+	
+=>  If you wish to hide some actions, buttons or code area etc then just put it under bellow condition
+	
+	@if(PermissionHelper::__checkPermission('route url'))
+	
+	@endif
+	
+	example:
+	
+	@if(PermissionHelper::__checkPermission('admin/users/add'))
+		<a class="btn btn-success" routerlink="add" routerlinkactive="active" style="margin-right:10px;" ng-reflect-router-link="add" ng-reflect-router-link-active="active" href="{{ route('admin.users.add') }}"> Add New User</a>
+	@endif
  
+    Above code will allow to add new user who have "admin/users/add" route permission.
