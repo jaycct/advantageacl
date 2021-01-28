@@ -12,9 +12,6 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "classmap": [
-            "publishable\\database"
-        ],
         "files": [
             "src/Helpers/PermissionHelper.php",
             "src/Helpers/SortingHelper.php"
