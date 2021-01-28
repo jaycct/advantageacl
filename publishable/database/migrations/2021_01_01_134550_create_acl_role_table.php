@@ -13,6 +13,7 @@ class CreateAclRoleTable extends Migration
      */
     public function up()
     {
+		Schema::disableForeignKeyConstraints();
 		Schema::create('acl_role', function (Blueprint $table) {
             $table->id();
             $table->string('role_name',255);
@@ -21,6 +22,7 @@ class CreateAclRoleTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+		Schema::enableForeignKeyConstraints();
     }
 
     /**

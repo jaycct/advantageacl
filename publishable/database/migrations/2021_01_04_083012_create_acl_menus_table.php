@@ -13,7 +13,8 @@ class CreateAclMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('acl_menus', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+		Schema::create('acl_menus', function (Blueprint $table) {
             $table->id();
             $table->string('menu_name',255);
             $table->string('icon',255);
@@ -21,6 +22,7 @@ class CreateAclMenusTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+		Schema::enableForeignKeyConstraints();
     }
 
     /**
