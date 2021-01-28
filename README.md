@@ -2,12 +2,17 @@
 
 Run bellow command to install
 
+
 composer require jaycct/advantageacl
+
 
 Then follow bellow steps
 
+
 1.php artisan migrate
+
 2.php artisan db:seed
+
 
 
 3.In confing/app.php add
