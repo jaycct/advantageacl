@@ -24,7 +24,7 @@ class CreateAclModulesTable extends Migration
             $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('acl_menus_id')->references('id')->on('acl_menus')->onDelete('cascade');
+            $table->foreign('acl_menus_id')->references('id')->on('acl_menus');
 
         });
 		Schema::enableForeignKeyConstraints();

@@ -17,7 +17,7 @@ class AddAclRoleIdToAdminUsersTable extends Migration
             Schema::disableForeignKeyConstraints();
 			Schema::table('admin_users', function (Blueprint $table) {
                 $table->bigInteger('acl_role_id')->unsigned()->after('password');
-                $table->foreign('acl_role_id')->references('id')->on('acl_role')->onDelete('cascade');
+                $table->foreign('acl_role_id')->references('id')->on('acl_role');
             });
 			Schema::enableForeignKeyConstraints();
 

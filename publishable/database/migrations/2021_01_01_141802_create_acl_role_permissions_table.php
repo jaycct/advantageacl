@@ -20,8 +20,8 @@ class CreateAclRolePermissionsTable extends Migration
             $table->bigInteger('module_route_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('role_id')->references('id')->on('acl_role')->onDelete('cascade');
-            $table->foreign('module_route_id')->references('id')->on('acl_module_route')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('acl_role');
+            $table->foreign('module_route_id')->references('id')->on('acl_module_route');
 
         });
 	    Schema::enableForeignKeyConstraints();
