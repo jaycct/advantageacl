@@ -13,6 +13,7 @@ class CreateAclModulesTable extends Migration
      */
     public function up()
     {
+	    Schema::disableForeignKeyConstraints();
         Schema::create('acl_modules', function (Blueprint $table) {
             $table->id();
             $table->string('module_name',255);
@@ -25,6 +26,7 @@ class CreateAclModulesTable extends Migration
             $table->softDeletes();
             $table->foreign('acl_menus_id')->references('id')->on('acl_menus')->onDelete('cascade');
         });
+		Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -13,7 +13,7 @@ class CreateAclRoleTable extends Migration
      */
     public function up()
     {
-        Schema::create('acl_role', function (Blueprint $table) {
+		Schema::create('acl_role', function (Blueprint $table) {
             $table->id();
             $table->string('role_name',255);
             $table->string('role_description',1025)->nullable();

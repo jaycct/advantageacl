@@ -13,6 +13,7 @@ class CreateAclRolePermissionsTable extends Migration
      */
     public function up()
     {
+	    Schema::disableForeignKeyConstraints();
         Schema::create('acl_role_permissions', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('role_id')->unsigned();
@@ -23,6 +24,8 @@ class CreateAclRolePermissionsTable extends Migration
             $table->foreign('module_route_id')->references('id')->on('acl_module_route')->onDelete('cascade');
 
         });
+	    Schema::enableForeignKeyConstraints();
+
     }
 
     /**
