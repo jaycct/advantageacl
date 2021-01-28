@@ -46,7 +46,7 @@ class AdvantageAclServiceProvider extends ServiceProvider
         $this->app['router']->namespace('jaycct\advantageacl\Http\Controllers')
             ->middleware(['web'])
             ->group(function () {
-                $this->loadRoutesFrom(__DIR__ . '/routes/advantageacl.php');
+                $this->loadRoutesFrom(__DIR__ . '/Routes/advantageacl.php');
             });
 
         $this->publishes([__DIR__.'/./../public' => public_path('advantageacl/'),
@@ -59,7 +59,7 @@ class AdvantageAclServiceProvider extends ServiceProvider
         ], 'config');
 
 
-        $this->publishes([__DIR__.'/routes/advantageacl.php' => 'routes/advantageacl.php',
+        $this->publishes([__DIR__.'/Routes/advantageacl.php' => 'routes/advantageacl.php',
         ], 'route');
 
         $this->publishes([__DIR__.'/Http/Controllers' => 'app/http/controllers/',
