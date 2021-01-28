@@ -19,12 +19,13 @@ class CreateAclModulesTable extends Migration
             $table->string('module_name',255);
             $table->string('module_path',1024);
             $table->string('module_icon',1024)->nullable();
-            $table->bigInteger('acl_menus_id');
+            $table->bigInteger('acl_menus_id')->unsigned();
             $table->string('module_description',1024)->nullable();
             $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('acl_menus_id')->references('id')->on('acl_menus')->onDelete('cascade');
+
         });
 		Schema::enableForeignKeyConstraints();
     }
