@@ -46,22 +46,42 @@
                                     </div>
                                 </div>
                                 <div class="container">
-                                    <h5><span class="m-section__sub">Permissions</span></h5>
                                     <div class="form-group row">
-                                        @foreach($aclModules as $module)
-                                            <div class="col-sm-10">
-                                                <label for="">
-                                                    <b>{{$module['module_name']}}</b>
-                                                </label>
-                                                <div class="m-checkbox-inline">
-                                                    @foreach($module->modules_route as $moduleRoute)
-                                                        <input type="checkbox" name="permission[]" value="{{$moduleRoute['id']}}">
-                                                        <label class="">{{$moduleRoute['route']}}</label> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        @endforeach
+                                        <div class="col-md-6">
+                                            <h3>Permissions</h3>
+                                            <ul id="tree1">
+                                                @foreach($aclModules as $module)
+                                                    <li>
+                                                        <input type="checkbox" id="{{$module['module_name']}}" value="{{$module['id']}}" class="main-checkbox">
+                                                        {{$module['module_name']}}
+
+                                                    @if(count($module->modules_route))
+                                                            <ul>
+                                                                @foreach($module->modules_route as $moduleRoute)
+                                                                    <li>
+                                                                        @if(substr_count($moduleRoute['route'], "/") == 1 || strpos($moduleRoute['route'], "add") !== false || strpos($moduleRoute['route'], "edit") !== false || strpos($moduleRoute['route'], "destroy") !== false)
+                                                                            <input type="checkbox" name="permission[]" id="{{$moduleRoute['id']}}" value="{{$moduleRoute['id']}}">
+                                                                            @if(strpos($moduleRoute['route'], "add"))
+                                                                                <label for="{{$moduleRoute['id']}}">Add {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                            @elseif(strpos($moduleRoute['route'], "edit"))
+                                                                                <label for="{{$moduleRoute['id']}}">Edit {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                            @elseif(strpos($moduleRoute['route'], "destroy"))
+                                                                                <label for="{{$moduleRoute['id']}}">Delete {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                            @else
+                                                                                <label for="{{$moduleRoute['id']}}">List {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                            @endif
+
+                                                                        @endif
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
+
                                 </div>
 
                                 <div class="form-group row">
@@ -80,6 +100,3 @@
     </div>
 @endsection
 
-@section('javascript')
-
-@endsection

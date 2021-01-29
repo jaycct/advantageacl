@@ -49,7 +49,7 @@ class AdvantageAclServiceProvider extends ServiceProvider
                 $this->loadRoutesFrom(__DIR__ . '/Routes/advantageacl.php');
             });
 
-        $this->publishes([__DIR__.'/./../public' => public_path('advantageacl/'),
+        $this->publishes([__DIR__.'/./../public' => public_path('public/'),
         ], 'asset');
 
         $this->publishes([__DIR__.'/./../publishable/database/migrations' => database_path('migrations'),

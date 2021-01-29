@@ -49,37 +49,53 @@
                                 </div>
                             </div>
                             <div class="container">
-                                <h5><span class="m-section__sub">Permissions</span></h5>
                                 <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <h3>Permissions</h3>
+                                        <ul id="tree1">
+                                            @foreach($aclModules as $module)
 
-                                    @foreach($aclModules as $module)
-                                    <div class="col-sm-10">
-                                        <label for="">
-                                            <b>{{$module['module_name']}}&nbsp;</b>
-                                        </label>
-                                        <div class="m-checkbox-inline">
-                                            @foreach($module->modules_route as $moduleRoute)
-                                            <label class="">
-                                                @php
-                                                $checked = "";
-                                                @endphp
-                                                @foreach($permissions as $permission)
-                                                @if($permission->module_route_id == $moduleRoute['id'])
-                                                @php
-                                                $checked = "checked";
-                                                break;
-                                                @endphp
-                                                @endif
-                                                @endforeach
-                                                <input type="checkbox" name="permission[]" value="{{$moduleRoute['id']}}" {{$checked}}> <span>&nbsp;</span>{{$moduleRoute['route']}}
-                                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                            </label>
+                                                <li>
+                                                    <input type="checkbox" id="{{$module['module_name']}}" value="{{$module['id']}}" class="main-checkbox">
+                                                    {{$module['module_name']}}
+
+                                                    @if(count($module->modules_route))
+                                                        <ul>
+                                                            @foreach($module->modules_route as $moduleRoute)
+                                                                @php
+                                                                    $checked = "";
+                                                                @endphp
+                                                                @foreach($permissions as $permission)
+                                                                    @if($permission->module_route_id == $moduleRoute['id'])
+                                                                        @php
+                                                                            $checked = "checked";
+                                                                            break;
+                                                                        @endphp
+                                                                    @endif
+                                                                @endforeach
+                                                                <li>
+                                                                    @if(substr_count($moduleRoute['route'], "/") == 1 || strpos($moduleRoute['route'], "add") !== false || strpos($moduleRoute['route'], "edit") !== false || strpos($moduleRoute['route'], "destroy") !== false)
+                                                                         <input type="checkbox" name="permission[]" id="{{$moduleRoute['id']}}" value="{{$moduleRoute['id']}}" {{$checked}}>
+                                                                         @if(strpos($moduleRoute['route'], "add"))
+                                                                            <label for="{{$moduleRoute['id']}}">Add {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                         @elseif(strpos($moduleRoute['route'], "edit"))
+                                                                            <label for="{{$moduleRoute['id']}}">Edit {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                         @elseif(strpos($moduleRoute['route'], "destroy"))
+                                                                            <label for="{{$moduleRoute['id']}}">Delete {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                         @else
+                                                                            <label for="{{$moduleRoute['id']}}">List {{ substr($module['module_name'], 0, -1)}}</label>
+                                                                         @endif
+
+                                                                    @endif
+
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </li>
                                             @endforeach
-                                        </div>
+                                        </ul>
                                     </div>
-                                    @endforeach
-
-
                                 </div>
                             </div>
 
