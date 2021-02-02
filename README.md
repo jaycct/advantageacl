@@ -34,6 +34,7 @@ Then follow bellow steps
 	php artisan vendor:publish --provider="jaycct\advantageacl\AdvantageAclServiceProvider" --tag="config"		  
 	php artisan vendor:publish --provider="jaycct\advantageacl\AdvantageAclServiceProvider" --tag="views"		  
 	php artisan vendor:publish --provider="jaycct\advantageacl\AdvantageAclServiceProvider" --tag="lang"		  
+	php artisan vendor:publish --provider="jaycct\advantageacl\AdvantageAclServiceProvider" --tag="asset"		  
 
 
 6.In AdminUser model add bellow method
