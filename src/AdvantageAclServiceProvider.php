@@ -79,9 +79,6 @@ class AdvantageAclServiceProvider extends ServiceProvider
 
         $this->publishes([__DIR__.'/Traits' => 'app/Traits/',
         ], 'traits');
-        $this->publishes([__DIR__.'/Helpers' => 'app/Helpers/',
-        ], 'helpers');
-
 
         $this->loadViewComponentsAs('courier', [
             AdvantageaclListModule::class,
