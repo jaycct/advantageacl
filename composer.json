@@ -23,7 +23,6 @@
             "src/Helpers/PermissionHelper.php",
             "src/Helpers/SortingHelper.php",
             "src/Helpers/GenerateMenuHelper.php"
-
         ]
 
     },
@@ -52,9 +51,11 @@
             "php artisan vendor:publish --tag=advertisement-views --force",
             "php artisan vendor:publish --tag=advertisement-lang --force",
             "php artisan vendor:publish --tag=advertisement-asset --force"
+        ],
+		 "post-create-project-cmd": [
+            "rm -rf resource/views/advantageacl/*"
         ]
     },
-
     "require": {}
 
 }
