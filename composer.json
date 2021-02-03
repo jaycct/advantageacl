@@ -33,7 +33,9 @@
         {
             "providers": ["jaycct\\advantageacl\\AdvantageAclServiceProvider"],
 			 "aliases": {
-						"GenerateMenuHelper": "jaycct\\advantageacl\\Helpers\\GenerateMenuHelper"
+			    "GenerateMenuHelper": "jaycct\\advantageacl\\Helpers\\GenerateMenuHelper"
+			    "PermissionHelper": "jaycct\\advantageacl\\Helpers\\PermissionHelper"
+			    "SortingHelper": "jaycct\\advantageacl\\Helpers\\SortingHelper"
 			}
     
         }
