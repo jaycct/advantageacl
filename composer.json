@@ -41,13 +41,13 @@
         }
     },
 	 "scripts": {
-        "post-root-package-install": [
+        "post-package-install": [
             "php artisan vendor:publish --tag=advertisement-config --force",
             "php artisan vendor:publish --tag=advertisement-views --force",
             "php artisan vendor:publish --tag=advertisement-lang --force",
             "php artisan vendor:publish --tag=advertisement-asset --force"
         ],
-        "post-root-package-update": [
+        "post-package-update": [
             "php artisan vendor:publish --tag=advertisement-config --force",
             "php artisan vendor:publish --tag=advertisement-views --force",
             "php artisan vendor:publish --tag=advertisement-lang --force",
