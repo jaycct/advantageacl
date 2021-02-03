@@ -31,7 +31,11 @@
     {
         "laravel":
         {
-            "providers": ["jaycct\\advantageacl\\AdvantageAclServiceProvider"]
+            "providers": ["jaycct\\advantageacl\\AdvantageAclServiceProvider"],
+			 "aliases": {
+						"GenerateMenuHelper": "jaycct\\advantageacl\\Helpers\\GenerateMenuHelper"
+			}
+    
         }
     },
 	 "scripts": {
@@ -41,7 +45,7 @@
             "php artisan vendor:publish --tag=advertisement-lang --force",
             "php artisan vendor:publish --tag=advertisement-asset --force"
         ],
-        "post-root-package--update": [
+        "post-root-package-update": [
             "php artisan vendor:publish --tag=advertisement-config --force",
             "php artisan vendor:publish --tag=advertisement-views --force",
             "php artisan vendor:publish --tag=advertisement-lang --force",
