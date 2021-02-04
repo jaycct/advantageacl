@@ -7,7 +7,11 @@ use Illuminate\Support\Str;
 
 class GenerateMenuHelper
 {
-
+    /*
+     *
+     * Get menus from Database
+     *
+     * */
     public static function __menu() {
 
         $menu = \DB::table('acl_menus');
@@ -50,7 +54,11 @@ class GenerateMenuHelper
         }
         return $finalMenu;
     }
-
+ /*
+  *
+  * Add active class to selected menu
+  *
+  * */
     public static function activeClass($path = '',$expanded = false) {
         $class = 'm-menu__item--active';
         if($expanded == true){
@@ -64,5 +72,42 @@ class GenerateMenuHelper
             return '';
         }
     }
-
+    /*
+     *
+     * Generate navigation menu
+     *
+     * */
+    public static function getNavMenus() {
+        $menuString = '';
+        $dbMenus    = Self::__menu();
+        if(!empty($dbMenus)) {
+            foreach ($dbMenus as $main => $menu) {
+                if (isset($menu['sub_menu'])) {
+                    $menuString .= '<li class="c-sidebar-nav-dropdown" >';
+                    $menuString .= '<a class="c-sidebar-nav-dropdown-toggle" href = "#" >';
+                    $menuString .= '<i class="' . $menu['icon'] . '"></i>';
+                    $menuString .= '<span>' . $main . '</span >';
+                    $menuString .= '</a>';
+                    $menuString .= '<ul class="c-sidebar-nav-dropdown-items">';
+                    foreach ($menu['sub_menu'] as $key => $sub_menu) {
+                        $menuString .= '<li class="c-sidebar-nav-title">';
+                        $menuString .= '<a class="c-sidebar-nav-link" href="' . URL('admin') . '/' . $sub_menu['module_path'] . '">';
+                        $menuString .= '<i class=""></i>' . $sub_menu['menu_name'] . '</span>';
+                        $menuString .= '</a>';
+                        $menuString .= '</li>';
+                    }
+                    $menuString .= '</ul>';
+                    $menuString .= '</li>';
+                } else {
+                    $menuString .= '<li class="c-sidebar-nav-item" >';
+                    $menuString .= '<a class="c-sidebar-nav-link" href ="' . URL('admin') . ' / ' . $menu['module_path'] . '">';
+                    $menuString .= '<i class="' . $menu['icon'] . '" ></i>';
+                    $menuString .= '<span>' . $main . '</span>';
+                    $menuString .= '</a>';
+                    $menuString .= '</li >';
+                }
+            }
+        }
+        return $menuString;
+    }
 }
