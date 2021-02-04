@@ -39,17 +39,6 @@
     
         }
     },
-	"scripts": {
-        "pre-install-cmd": [
-            "AdvantageaclEvents:postPackageInstall"
-        ],
-        "pre-update-cmd": [
-            "AdvantageaclEvents:postUpdate"
-        ],
-		 "post-create-project-cmd": [
-            "rm -rf resource/views/advantageacl/*"
-        ]
-    },
     "require": {}
 
 }
