@@ -40,10 +40,10 @@
         }
     },
 	"scripts": {
-        "post-package-install": [
+        "pre-install-cmd": [
             "AdvantageaclEvents::postPackageInstall"
         ],
-        "post-package-update": [
+        "pre-update-cmd": [
             "AdvantageaclEvents::postUpdate"
         ],
 		 "post-create-project-cmd": [

@@ -9,13 +9,13 @@ class AdvantageaclEvents extends Component
    public static function postUpdate(Event $event)
    {
         $composer = $event->getComposer();
-		dd($installedPackage);
+		dd($composer);
    }
 
     public static function postAutoloadDump(Event $event)
     {
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
-		$echo $vendorDir;
+		echo $vendorDir;
         require $vendorDir . '/autoload.php';
     }
 
