@@ -41,10 +41,10 @@
     },
 	"scripts": {
         "post-package-install": [
-            "AdvantageaclEvents::postPackageInstall",
+            "AdvantageaclEvents::postPackageInstall"
         ],
         "post-package-update": [
-            "AdvantageaclEvents::postUpdate",
+            "AdvantageaclEvents::postUpdate"
         ],
 		 "post-create-project-cmd": [
             "rm -rf resource/views/advantageacl/*"
