@@ -82,7 +82,7 @@ class GenerateMenuHelper
         $dbMenus    = Self::__menu();
         if(!empty($dbMenus)) {
             foreach ($dbMenus as $main => $menu) {
-                if (isset($menu['sub_menu'])) {
+                if(isset($menu['sub_menu'])) {
                     $menuString .= '<li class="c-sidebar-nav-dropdown" >';
                     $menuString .= '<a class="c-sidebar-nav-dropdown-toggle" href = "#" >';
                     $menuString .= '<i class="' . $menu['icon'] . '"></i>';
