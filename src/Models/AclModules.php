@@ -17,7 +17,7 @@ class AclModules extends Model
      * @var array
      */
     protected $fillable = [
-        'module_name','module_path','module_description', 'status','acl_menus_id'
+        'module_name','module_path','module_icon','module_description', 'status','acl_menus_id'
     ];
 
     /**
