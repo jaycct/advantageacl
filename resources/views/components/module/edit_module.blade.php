@@ -43,11 +43,17 @@
                                     <input id="modulePath" name="module_path"  class="form-control{{ $errors->has('module_path') ? ' is-invalid' : '' }}" type="text" placeholder="{{ __('acl-modules.module_path') }}" value="{{ $aclModule['module_path']}}">
                                     </div>
                                 </div>
-                            <div class="form-group row">
-                                <label for="moduleDescription" class="col-sm-2 col-form-label">{{ __('acl-modules.module_description') }}</label>
-                                <div class="col-sm-10">
-                                 <textarea id="moduleDescription" name="module_description" class="form-control{{ $errors->has('module_description') ? ' is-invalid' : '' }}"  type="text" placeholder="{{ __('acl-modules.module_description') }}">{{$aclModule['module_description']}}</textarea>
-                                </div>
+								 <div class="form-group row">
+                                        <label for="moduleIcon" class="col-sm-2 col-form-label">{{ __('acl-modules.module_icon') }}</label>
+                                        <div class="col-sm-10">
+                                            <input id="moduleIcon" name="module_icon" class="form-control{{ $errors->has('module_icon') ? ' is-invalid' : '' }}" type="text" placeholder="{{ __('acl-modules.module_icon') }}" value="{{ $aclModule['module_icon']}}">
+                                        </div>
+                                 </div>
+                               <div class="form-group row">
+                                  <label for="moduleDescription" class="col-sm-2 col-form-label">{{ __('acl-modules.module_description') }}</label>
+                                  <div class="col-sm-10">
+                                     <textarea id="moduleDescription" name="module_description" class="form-control{{ $errors->has('module_description') ? ' is-invalid' : '' }}"  type="text" placeholder="{{ __('acl-modules.module_description') }}">{{$aclModule['module_description']}}</textarea>
+                                  </div>
                             </div>
                             <div class="form-group row">
                             <label for="aclMenusId" class="col-sm-2 col-form-label">{{ __('acl-modules.select_menu') }}</label>

@@ -77,7 +77,7 @@ class AclModulesController extends AclAdminController
 
         try {
 
-            $postData = $request->only('module_name', 'module_path', 'module_description', 'status', 'acl_menus_id');
+            $postData = $request->only('module_name', 'module_path','module_icon','module_description', 'status', 'acl_menus_id');
             $postData['status'] = (isset($postData['status']) && $postData['status'] == 'on') ? 'Active' : 'Inactive';
             $postData['modules'] = $postData;
 
@@ -121,7 +121,7 @@ class AclModulesController extends AclAdminController
     {
         try {
 
-            $postData = $request->only('id', 'module_name', 'module_path', 'module_description', 'status', 'acl_menus_id');
+            $postData = $request->only('id', 'module_name', 'module_path','module_icon','module_description', 'status', 'acl_menus_id');
 
             $postData['status'] = (isset($postData['status']) && $postData['status'] == 'on') ? 'Active' : 'Inactive';
             $postData['modules'] = $postData;
