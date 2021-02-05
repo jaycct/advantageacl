@@ -18,7 +18,7 @@ class CreateAclModulesTable extends Migration
             $table->id();
             $table->string('module_name',255);
             $table->string('module_path',1024);
-            $table->string('module_icon',1024)->nullable();
+            $table->text('module_icon')->nullable();
             $table->bigInteger('acl_menus_id')->unsigned();
             $table->string('module_description',1024)->nullable();
             $table->enum('status',['Active','Inactive'])->default('Active');
