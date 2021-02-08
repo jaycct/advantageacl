@@ -92,7 +92,7 @@ class GenerateMenuHelper
                     foreach ($menu['sub_menu'] as $key => $sub_menu) {
                         $menuString .= '<li class="c-sidebar-nav-title">';
                         $menuString .= '<a class="c-sidebar-nav-link" href="' . URL('admin').'/'.$sub_menu['module_path'].'">';
-                        $menuString .= $menu['icon'];
+                        $menuString .= $sub_menu['icon'];
 						$menuString .= '<span>'.$sub_menu['menu_name'].'</span>';
                         $menuString .= '</a>';
                         $menuString .= '</li>';
